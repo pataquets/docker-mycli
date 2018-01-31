@@ -13,6 +13,6 @@ RUN \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/
 
-RUN pip install mycli
+RUN pip install --no-cache mycli
 
 ENTRYPOINT [ "mycli" ]
