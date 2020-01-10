@@ -2,7 +2,8 @@ FROM python
 
 RUN \
   apt-key adv --keyserver hkp://hkps.pool.sks-keyservers.net --recv-keys ACCC4CF8 && \
-  echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" \
+  . /etc/os-release && \
+  echo "deb http://apt.postgresql.org/pub/repos/apt/ ${VERSION_CODENAME}-pgdg main" \
     | tee /etc/apt/sources.list.d/pgdg.list \
   && \
   apt-get update && \
